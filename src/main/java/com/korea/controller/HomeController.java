@@ -6,16 +6,22 @@ import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.korea.domain.TestDTO;
 
 /**
  * Handles requests for the application home page.
  */
 @Controller
 public class HomeController {
+	
+	@Autowired
+	private TestDTO dto;
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
@@ -32,6 +38,11 @@ public class HomeController {
 		String formattedDate = dateFormat.format(date);
 		
 		model.addAttribute("serverTime", formattedDate );
+		
+		dto.setName("홍길동");
+		dto.setAge("55");
+		dto.setAddr("addr");
+		System.out.print(dto);
 		
 		return "home";
 	}
