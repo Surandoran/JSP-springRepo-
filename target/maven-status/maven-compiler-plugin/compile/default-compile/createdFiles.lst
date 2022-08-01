@@ -1,0 +1,5 @@
+com\korea\domain\Test2DTO.class
+com\korea\domain\TestDTO.class
+com\korea\domain\TestDTO$TestDTOBuilder.class
+com\korea\controller\HomeController.class
+com\korea\mapper\TestMapper.class

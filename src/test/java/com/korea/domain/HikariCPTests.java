@@ -1,5 +1,11 @@
 package com.korea.domain;
 
+import static org.junit.Assert.*;
+
+import java.sql.Connection;
+
+import javax.sql.DataSource;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,29 +17,19 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
-public class DTOTests {
-	
+public class HikariCPTests {
 	@Autowired
-	private TestDTO testdto;
-	
-	@Test
-	public void test() {
-		
-		TestDTO dto = TestDTO.builder()
-				.age("55")
-				.name("test")
-				.addr("test")
-				.build();
-		System.out.println(dto);
-		
-	}
-	
+    private DataSource dataSource;
 	@Test
 	public void test2() {
-		
-		
-		log.info("testDTO : " + testdto ) ;
-		
+		try {
+            Connection con = dataSource.getConnection();
+            log.info("!!!!!!!!!!!!!" + con);
+            
+        } catch(Exception e) {
+        	log.error(e.getMessage());
+            e.printStackTrace();
+        }
 	}
 
 }

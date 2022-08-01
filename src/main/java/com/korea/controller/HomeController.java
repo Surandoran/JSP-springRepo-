@@ -14,10 +14,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.korea.domain.TestDTO;
 
+import lombok.extern.log4j.Log4j;
+
+
+
 /**
  * Handles requests for the application home page.
  */
 @Controller
+@Log4j
 public class HomeController {
 	
 	@Autowired
@@ -44,6 +49,10 @@ public class HomeController {
 		dto.setAddr("addr");
 		System.out.print(dto);
 		
+		logger.info("DTO : " + dto);
+		log.info(dto);
+		
+	
 		return "home";
 	}
 	
