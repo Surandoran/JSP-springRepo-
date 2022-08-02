@@ -9,14 +9,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.korea.domain.TestDTO;
 
 import lombok.extern.log4j.Log4j;
-
-
 
 /**
  * Handles requests for the application home page.
@@ -25,7 +24,7 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class HomeController {
 	
-	@Autowired
+	@Autowired 
 	private TestDTO dto;
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -44,16 +43,15 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		dto.setName("ÌôçÍ∏∏Îèô");
+		dto.setName("»´±Êµø");
 		dto.setAge("55");
-		dto.setAddr("addr");
-		System.out.print(dto);
+		dto.setAddr("¡÷º“¡÷º“");
+
+		log.info("DTO : " +dto);
 		
-		logger.info("DTO : " + dto);
-		log.info(dto);
-		
-	
 		return "home";
 	}
+	
+
 	
 }
