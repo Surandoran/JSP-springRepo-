@@ -37,6 +37,7 @@
 	
 	<!-- mybatis-spring 연결 -->
 	<mybatis-spring:scan base-package="com.korea.mapper"></mybatis-spring:scan>
+	<mybatis-spring:scan base-package="com.korea.exception"></mybatis-spring:scan>
 	
 	
 </beans>

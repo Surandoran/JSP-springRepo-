@@ -7,11 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>TEST3.JSP PAGE</h1>
-
+<h1>RESULT.JSP PAGE</h1>
 
 name : ${dto.name} <br>
-age : ${dto.age} 
-
+age : ${dto.age} <br>
+<hr>
+no : ${board.no }<br>
+writer : ${board.writer }<br>
+content : ${board.content }<br>
 </body>
 </html>

@@ -22,6 +22,7 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.korea.controller" />
+	<context:component-scan base-package="com.korea.exception"></context:component-scan >
 	
 	
 </beans:beans>
